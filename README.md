@@ -37,47 +37,168 @@ Nine fully hand-crafted canvas animations that respond to real weather condition
 | ☁️ Cloudy | Floating cloud masses, faint twinkling stars |
 | 🌫️ Foggy | Moving horizontal mist bands |
 | 🌦️ Drizzle | Light rain, separate visual from heavy rain |
-| 🌙 Night | Moon with craters, twinkling starfield, subtle glow |
+| 🌙 Night | Moon with craters, twinkling starfield, subtle halo |
 | 🌁 Hazy | Warm dust particles, layered haze bands |
 
-Each scene includes film grain, vignette overlay, and per-scene color grading for a cinematic look.
+Each scene includes film grain texture, radial vignette, and per-scene colour grading overlay. The sun is drawn with 3 layered radial gradients (outer halo → mid glow → soft core) — not a flat disc.
 
-### 📊 Weather Data (Powered by Open-Meteo — Free, No API Key)
-- **Current conditions** — Temperature, feels like, humidity, wind speed & direction, gusts, UV index, visibility, cloud cover, pressure, dew point, precipitation
-- **7-Day Forecast** — Hi/lo temperatures, condition icons, precipitation probability, animated temperature curve
-- **24-Hour Hourly** — Scrollable hourly strip with temperature, condition, and rain probability
-- **Air Quality** — European AQI with PM2.5, PM10, O₃, NO₂ breakdown
-- **Sunrise & Sunset** — Animated arc showing current sun position in the sky
+---
+
+### 📊 Current Weather
+Always visible on the main screen:
+- **Temperature** — large cinematic display with °C / °F toggle
+- **Feels Like** — apparent temperature
+- **Hi / Lo** — today's max and min
+- **Condition** — full label + one-line description (e.g. "Brilliant clear skies all day.")
+- **Location** — city name
+- **Date & Time** — live clock, updates every second
+
+**Right-side float cards (always visible):**
+- Wind speed (km/h) + direction + gust speed
+- Humidity % + dew point temperature
+- UV Index with colour-coded severity (Low → Extreme)
+- Visibility (km) + cloud cover %
+- Air Quality — European AQI ring chart + label
+- Sunrise & Sunset — animated arc with live sun position
+
+---
+
+### 📅 7-Day Forecast
+- Daily condition icon, hi/lo temperatures, precipitation probability %
+- Animated bezier temperature curve connecting all 7 days with gradient fill
+- "Today" and "Tomorrow" highlighted
+- Precipitation % shown when above 15%
+
+---
+
+### 🕐 24-Hour Hourly Forecast
+- Horizontally scrollable strip with visible scrollbar
+- Each card shows: time, condition icon, temperature, rain probability
+- "Now" card highlighted
+- Full 24 hours from current time
+
+---
+
+### 📋 Details Tab
+Six additional data points:
+- Atmospheric Pressure (hPa) + trend indicator (▲ High / → Normal / ▼ Low)
+- UV Index + severity label
+- Cloud Cover %
+- Precipitation mm (last hour)
+- Dew Point + comfort label (Dry / Comfortable / Humid / Very Humid)
+- Wind Gust speed + compass direction
+
+---
+
+### 🌬️ Air Quality
+- European AQI score with animated SVG ring chart
+- PM2.5, PM10, O₃ (Ozone), NO₂ (Nitrogen Dioxide) values
+- Colour-coded: Good / Moderate / Unhealthy* / Unhealthy
+
+---
+
+### 🌙 Moon Phase
+- Current phase icon (🌑 → 🌘)
+- Phase name (New Moon, Waxing Crescent, Full Moon, etc.)
+- Illumination % + progress bar
+
+---
+
+### 🌅 Sunrise & Sunset
+- SVG arc with golden gradient showing day progress
+- Animated sun dot at current position on the arc
+- Exact sunrise and sunset times
+
+---
 
 ### 🎒 Life & Outdoors Overlay
-- **Outfit Recommender** — 8 contextual clothing items based on temperature and conditions
-- **Pollen & Allergy Forecast** — Tree, Grass, Weed, Mould levels estimated from temperature, humidity, and season
-- **Activity Suitability** — 8 activities (Running, Cycling, Golf, Walking, Camping, Photography, Driving, Yoga) rated Great / OK / Poor with specific reasons
+
+**Outfit Recommender**
+- 8 clothing items dynamically chosen based on temperature range
+- Banner with specific advice text, current temp, humidity, and condition
+
+**Pollen & Allergy Forecast**
+- Tree, Grass, Weed, Mould pollen levels
+- Estimated from temperature, humidity, and month/season
+- Colour-coded bars: Low / Moderate / High
+
+**Activity Suitability**
+- 8 activities: Running, Cycling, Golf, Walking, Camping, Photography, Driving, Yoga
+- Rated: ✓ Great / ~ OK / ✗ Poor with a specific reason for each
+
+---
 
 ### ✨ Insights Overlay
-- **Weather Quality Score** — /100 composite score from temperature, rain risk, wind, and air quality
-- **Smart Tips** — Contextual advisories: heat/cold warnings, UV alerts, rain incoming, wind warnings, humidity alerts
-- **Temperature Science** — Heat Index, Wind Chill, daily range, tomorrow comparison with trend indicator
-- **Weekly Heatmap** — 7-day temperature grid colour-coded from cool to hot
-- **Share Card** — Copy weather summary to clipboard for WhatsApp/social sharing
 
-### ⚖️ City Comparison
-- Compare current city against any number of additional cities
-- Side-by-side: temperature, feels like, humidity, wind, condition, AQI
-- In-overlay city search (no browser prompts)
+**Weather Quality Score**
+- Composite score out of 100
+- Factors: temperature comfort, rain risk, wind, air quality
+- Colour-coded ring chart
 
-### 📡 Live Radar
-- Windy.com precipitation radar embedded and centred on current location
+**Smart Contextual Tips** (up to 8, auto-generated from live data)
+- Heat Advisory (temp > 35°C)
+- Cold Advisory (temp < 5°C)
+- Sun Protection needed (UV ≥ 6)
+- Poor Air Quality warning (AQI > 100)
+- Rain Coming (>70% chance in next 3 hours)
+- Wind Warning (gusts > 55 km/h)
+- High Humidity alert (> 80%)
+- Best outdoor window recommendation
 
-### 🔍 Smart Search
-- City autocomplete with debounce
-- Saved city chips for quick switching
-- GPS auto-detect with reverse geocoding (Nominatim)
-- Duplicate chip prevention by lat/lon proximity
+**Temperature Science**
+- Daily temperature range
+- Heat Index — Rothfusz formula, activates when temp > 27°C
+- Wind Chill — activates when temp < 10°C
+- Tomorrow's high with trend badge (▲ / ▼ / →)
+- 7-day total rainfall in mm
+- Moon phase + illumination %
+
+**Weekly Temperature Heatmap**
+- 7-cell grid, colour-coded from cool to hot
+- Hover any cell to see exact date and temperature
+
+**Share Weather Card**
+- Formatted weather summary ready to paste
+- One-click copy to clipboard (WhatsApp / Twitter / anywhere)
+
+---
+
+### ⚖️ City Comparison Overlay
+- Compare your city against any number of additional cities
+- Side-by-side: Temperature, Feels Like, Humidity, Wind, Condition, AQI
+- Built-in city search with autocomplete — no browser popups
+- Remove any city with one click
+
+---
+
+### 📡 Live Precipitation Radar
+- Windy.com radar embedded and centred on current location
+- Regional zoom showing live rainfall patterns
+
+---
+
+### 🔍 Search & Location
+- City autocomplete with 260ms debounce
+- Saved city chips — one click to switch
+- GPS auto-detect via browser geolocation
+- Reverse geocoding (Nominatim) to get city name from coordinates
+- Duplicate prevention using lat/lon proximity (0.05° radius)
+
+---
 
 ### ⚡ Weather Alerts
-- Auto-generated alerts for thunderstorms, high wind gusts, extreme UV
-- Animated pulsing pill-style banners, dismissable
+- Auto-generated for: severe thunderstorm, high wind gusts (> 60 km/h), extreme UV (≥ 8)
+- Animated pulsing banners at the top of the screen
+- Each alert individually dismissable
+
+---
+
+### ⚙️ UI & Settings
+- **°C / °F toggle** — all temperatures switch instantly everywhere
+- **Live clock** — updates every second
+- **Branded loading screen** — animated progress bar on first load
+- **Toast notifications** — non-intrusive action feedback
+- **Resize handling** — canvas scenes reinitialise on window resize
 
 ---
 
@@ -86,13 +207,13 @@ Each scene includes film grain, vignette overlay, and per-scene color grading fo
 | Layer | Technology |
 |-------|-----------|
 | Frontend | Vanilla HTML, CSS, JavaScript — zero frameworks |
-| Animations | HTML5 Canvas API (hand-coded, no libraries) |
+| Animations | HTML5 Canvas API — hand-coded, no libraries |
 | Weather Data | [Open-Meteo](https://open-meteo.com) Forecast API |
 | Air Quality | [Open-Meteo](https://open-meteo.com) Air Quality API |
 | Geocoding | Open-Meteo Geocoding API |
 | Reverse Geocoding | [Nominatim](https://nominatim.openstreetmap.org) (OpenStreetMap) |
 | Radar | [Windy.com](https://windy.com) Embed |
-| Fonts | Playfair Display, Inter, JetBrains Mono (Google Fonts) |
+| Fonts | Playfair Display · Inter · JetBrains Mono (Google Fonts) |
 | Hosting | GitHub Pages |
 
 **No build step. No npm. No framework. No API key required.** A single `index.html` file.
@@ -108,7 +229,6 @@ Each scene includes film grain, vignette overlay, and per-scene color grading fo
 ```bash
 git clone https://github.com/YASHGUPTA11122004/Nimbus-Weather.git
 cd Nimbus-Weather
-# Just open index.html in any browser
 open index.html
 ```
 
@@ -120,44 +240,32 @@ No installation, no dependencies, no configuration needed.
 
 ```
 Nimbus-Weather/
-└── index.html          # The entire application — ~950 lines
+├── index.html      # The entire application (~950 lines)
+├── README.md       # This file
+└── TECHNICAL.md    # Internal architecture guide for developers & AI assistants
 ```
-
-Everything lives in a single file by design. This makes it:
-- Trivially deployable to any static host
-- Easy to share, fork, or embed
-- Zero-dependency in the truest sense
 
 ---
 
 ## API Reference
 
-All APIs used are completely free with no authentication required:
+All APIs are free, no authentication required:
 
 ```
-Weather:     https://api.open-meteo.com/v1/forecast
-Air Quality: https://air-quality-api.open-meteo.com/v1/air-quality
-Geocoding:   https://geocoding-api.open-meteo.com/v1/search
-Reverse Geo: https://nominatim.openstreetmap.org/reverse
-Radar:       https://embed.windy.com/embed2.html
+Weather:      https://api.open-meteo.com/v1/forecast
+Air Quality:  https://air-quality-api.open-meteo.com/v1/air-quality
+Geocoding:    https://geocoding-api.open-meteo.com/v1/search
+Reverse Geo:  https://nominatim.openstreetmap.org/reverse
+Radar:        https://embed.windy.com/embed2.html
 ```
-
----
-
-## Screenshots
-
-| Clear Sky | Thunderstorm | Night |
-|-----------|-------------|-------|
-| Sun rays, atmospheric glow | Lightning flashes, heavy rain | Moonlit starfield |
 
 ---
 
 ## Roadmap
 
-- [ ] PWA support (offline caching, installable)
+- [ ] PWA support — offline caching, installable on mobile
 - [ ] Historical weather data tab
 - [ ] Custom alert thresholds
-- [ ] Dark/light theme toggle
 - [ ] More language support
 
 ---
