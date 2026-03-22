@@ -53,7 +53,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Inter',sans-serif}
 
 /* CENTER HERO */
 #hero{display:flex;align-items:center;padding:0 28px;gap:16px}
-.hero-left{flex:1;min-width:0;padding:4px 0}
+.hero-left{flex:1;min-width:0;padding:4px 0;display:flex;flex-direction:column;justify-content:center}
 .hero-date{font-size:11px;font-family:'JetBrains Mono',monospace;color:rgba(255,255,255,.35);letter-spacing:.5px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .hero-date span{color:rgba(255,255,255,.15)}
 .hero-condition{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,66px);font-weight:900;color:white;line-height:1.05;margin-bottom:4px;text-shadow:0 4px 30px rgba(0,0,0,.3);letter-spacing:-1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -277,11 +277,10 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Inter',sans-serif}
         <button class="stab on" onclick="stripTab('week')">7-Day</button>
         <button class="stab" onclick="stripTab('hourly')">Hourly</button>
         <button class="stab" onclick="stripTab('details')">Details</button>
-        <div style="margin-left:auto;display:flex;align-items:center;gap:6px;font-size:10px;color:rgba(255,255,255,.2);font-family:'JetBrains Mono',monospace;letter-spacing:.3px">
+        <div style="margin-left:auto;display:flex;align-items:center;gap:6px;font-size:10px;color:rgba(255,255,255,.38);font-family:'JetBrains Mono',monospace;letter-spacing:.3px">
           <span>Built by</span>
-          <a href="https://github.com/YASHGUPTA11122004" target="_blank" style="color:rgba(255,255,255,.38);text-decoration:none;font-weight:500;transition:color .2s" onmouseover="this.style.color='rgba(255,255,255,.75)'" onmouseout="this.style.color='rgba(255,255,255,.38)'">Yash Gupta</a>
-          <span style="opacity:.4">·</span>
-          <span>Nimbus Weather</span>
+          <a href="https://github.com/YASHGUPTA11122004" target="_blank" style="color:rgba(255,255,255,.65);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:1px;transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.65)'">Yash Gupta</a>
+          <span style="opacity:.35">· Nimbus</span>
         </div>
       </div>
       <div id="week-view"></div>
