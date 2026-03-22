@@ -26,35 +26,33 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Inter',sans-serif}
 /* ── MAIN UI ── */
 #ui{position:fixed;inset:0;z-index:10;display:grid;grid-template-rows:auto 1fr auto;padding:0;overflow:hidden}
 
-#topbar{display:flex;align-items:center;justify-content:space-between;padding:20px 36px 0;gap:12px}
+#topbar{display:flex;align-items:center;padding:18px 28px 0;gap:10px;min-width:0}
 .logo{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:1px;flex-shrink:0}
 .logo span{color:rgba(255,255,255,.4)}
-
-.search-area{position:relative;flex:0 0 240px}
-.search-area input{width:100%;padding:9px 14px 9px 34px;background:rgba(255,255,255,.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.18);border-radius:50px;color:white;font-family:'Inter',sans-serif;font-size:12px;outline:none;transition:all .25s}
+.search-area{position:relative;flex:0 0 200px}
+.search-area input{width:100%;padding:8px 12px 8px 30px;background:rgba(255,255,255,.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.18);border-radius:50px;color:white;font-family:'Inter',sans-serif;font-size:12px;outline:none;transition:all .25s}
 .search-area input::placeholder{color:rgba(255,255,255,.4)}
 .search-area input:focus{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.35)}
-.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.4);font-size:12px;pointer-events:none}
-.sugg-box{position:absolute;top:calc(100% + 6px);left:0;right:0;background:rgba(10,14,28,.92);backdrop-filter:blur(30px);border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;z-index:100;display:none}
+.search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.4);font-size:12px;pointer-events:none}
+.sugg-box{position:absolute;top:calc(100% + 6px);left:0;right:0;background:rgba(10,14,28,.95);backdrop-filter:blur(30px);border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;z-index:100;display:none}
 .sugg-box.show{display:block}
 .sugg-item{padding:10px 14px;font-size:12px;color:rgba(255,255,255,.6);cursor:pointer;transition:background .15s}
 .sugg-item:hover{background:rgba(255,255,255,.08);color:white}
-
-.topbar-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.pill-btn{padding:7px 12px;background:rgba(255,255,255,.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.16);border-radius:50px;color:rgba(255,255,255,.7);font-size:11px;font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s;font-weight:500;white-space:nowrap}
+.topbar-right{display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:auto}
+.pill-btn{padding:6px 11px;background:rgba(255,255,255,.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.16);border-radius:50px;color:rgba(255,255,255,.7);font-size:11px;font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s;font-weight:500;white-space:nowrap;flex-shrink:0}
 .pill-btn:hover{background:rgba(255,255,255,.18);color:white}
-.unit-grp{display:flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:50px;overflow:hidden}
-.ub{padding:6px 11px;font-size:11px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;border:none;background:transparent;color:rgba(255,255,255,.45);transition:all .2s}
+.unit-grp{display:flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:50px;overflow:hidden;flex-shrink:0}
+.ub{padding:5px 10px;font-size:11px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;border:none;background:transparent;color:rgba(255,255,255,.45);transition:all .2s}
 .ub.on{background:rgba(255,255,255,.18);color:white;border-radius:50px}
 
-#chips-row{display:flex;gap:5px;padding:8px 36px 0;flex-wrap:wrap}
+#chips-row{display:flex;gap:5px;padding:7px 28px 0;flex-wrap:wrap}
 .chip{padding:4px 10px;background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.14);border-radius:50px;font-size:11px;color:rgba(255,255,255,.55);cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:4px}
 .chip:hover{background:rgba(255,255,255,.15);color:white}
 .chip-x{opacity:.4;font-size:9px;cursor:pointer}
 .chip-x:hover{opacity:1;color:#ff6b6b}
 
 /* CENTER HERO */
-#hero{display:grid;grid-template-columns:1fr 380px;align-items:center;padding:0 28px;gap:20px}
+#hero{display:grid;grid-template-columns:1fr minmax(0,340px);align-items:center;padding:0 28px;gap:16px}
 
 .hero-left{min-width:0;padding:4px 0}
 .hero-date{font-size:11px;font-family:'JetBrains Mono',monospace;color:rgba(255,255,255,.35);letter-spacing:.5px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
@@ -85,7 +83,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Inter',sans-serif}
 .aqi-inline{display:flex;align-items:center;gap:8px}
 
 /* BOTTOM STRIP */
-#bottom-strip{padding:0 36px 20px}
+#bottom-strip{padding:0 28px 20px}
 #forecast-strip{background:rgba(255,255,255,.06);backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:14px 24px 18px;position:relative;overflow:visible}
 
 .strip-tabs{display:flex;gap:3px;margin-bottom:14px}
@@ -123,8 +121,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Inter',sans-serif}
 .dp-s{font-size:10px;color:rgba(255,255,255,.32);margin-top:3px}
 
 /* Alerts */
-#alert-zone{padding:0 36px;display:flex;flex-direction:column;gap:5px}
-.alert-pill{display:flex;align-items:center;gap:10px;padding:9px 16px;background:rgba(255,100,100,.1);backdrop-filter:blur(20px);border:1px solid rgba(255,100,100,.2);border-radius:50px;font-size:12px;color:rgba(255,180,180,.9);animation:ap 2s ease-in-out infinite;width:fit-content}
+#alert-zone{padding:0 28px;display:flex;flex-direction:column;gap:5px}
+.alert-pill{display:flex;align-items:center;gap:10px;padding:8px 14px;background:rgba(255,100,100,.1);backdrop-filter:blur(20px);border:1px solid rgba(255,100,100,.2);border-radius:50px;font-size:12px;color:rgba(255,180,180,.9);animation:ap 2s ease-in-out infinite;width:fit-content}
 @keyframes ap{0%,100%{border-color:rgba(255,100,100,.2)}50%{border-color:rgba(255,100,100,.45)}}
 .alert-pill button{background:none;border:none;color:rgba(255,150,150,.5);cursor:pointer;font-size:12px;margin-left:6px}
 
