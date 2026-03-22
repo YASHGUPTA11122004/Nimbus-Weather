@@ -54,36 +54,35 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Inter',sans-serif}
 .chip-x:hover{opacity:1;color:#ff6b6b}
 
 /* CENTER HERO */
-#hero{display:grid;grid-template-columns:1fr 210px;align-items:start;padding:0 36px;gap:16px;overflow:hidden;min-height:0}
+#hero{display:grid;grid-template-columns:1fr 380px;align-items:center;padding:0 28px;gap:20px}
 
-.hero-left{min-width:0;padding-top:4px}
-.hero-date{font-size:11px;font-family:'JetBrains Mono',monospace;color:rgba(255,255,255,.35);letter-spacing:.5px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.hero-left{min-width:0;padding:4px 0}
+.hero-date{font-size:11px;font-family:'JetBrains Mono',monospace;color:rgba(255,255,255,.35);letter-spacing:.5px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
 .hero-date span{color:rgba(255,255,255,.15)}
-
-.hero-condition{font-family:'Playfair Display',serif;font-size:clamp(36px,4.5vw,72px);font-weight:900;color:white;line-height:1.05;margin-bottom:4px;text-shadow:0 4px 30px rgba(0,0,0,.3);letter-spacing:-1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.hero-sub{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:14px;font-weight:300;letter-spacing:.3px}
-.hero-desc{font-size:12px;color:rgba(255,255,255,.28);max-width:380px;line-height:1.6;font-weight:300}
-
-.hero-temp-row{display:flex;align-items:flex-end;gap:16px;margin-top:18px}
-.hero-temp{font-family:'Playfair Display',serif;font-size:clamp(58px,7.5vw,110px);font-weight:900;color:white;line-height:.9;letter-spacing:-4px;text-shadow:0 6px 30px rgba(0,0,0,.25)}
-.hero-temp sup{font-size:clamp(18px,2.2vw,30px);letter-spacing:0;font-weight:300;opacity:.5;vertical-align:super;margin-left:3px}
-.hero-loc{font-size:12px;color:rgba(255,255,255,.38);font-family:'JetBrains Mono',monospace;display:flex;align-items:center;gap:5px;margin-bottom:8px}
-.hero-feels{font-size:12px;color:rgba(255,255,255,.32);font-weight:300;margin-top:6px}
+.hero-condition{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,66px);font-weight:900;color:white;line-height:1.05;margin-bottom:3px;text-shadow:0 4px 30px rgba(0,0,0,.3);letter-spacing:-1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero-sub{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:8px;font-weight:300;letter-spacing:.3px}
+.hero-desc{font-size:12px;color:rgba(255,255,255,.28);max-width:400px;line-height:1.6;font-weight:300}
+.hero-temp-row{display:flex;align-items:flex-end;gap:16px;margin-top:14px}
+.hero-temp{font-family:'Playfair Display',serif;font-size:clamp(52px,6.5vw,100px);font-weight:900;color:white;line-height:.9;letter-spacing:-4px;text-shadow:0 6px 30px rgba(0,0,0,.25)}
+.hero-temp sup{font-size:clamp(16px,2vw,26px);letter-spacing:0;font-weight:300;opacity:.5;vertical-align:super;margin-left:2px}
+.hero-loc{font-size:12px;color:rgba(255,255,255,.38);font-family:'JetBrains Mono',monospace;display:flex;align-items:center;gap:5px;margin-bottom:6px}
+.hero-feels{font-size:12px;color:rgba(255,255,255,.32);font-weight:300;margin-top:5px}
 .hero-feels b{color:rgba(255,255,255,.58);font-weight:500}
 
-/* RIGHT FLOAT CARDS */
-.hero-right{display:flex;flex-direction:column;gap:7px;padding-top:4px;width:210px}
-.float-card{background:rgba(255,255,255,.07);backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,.11);border-radius:16px;padding:11px 13px;transition:all .25s}
+/* RIGHT FLOAT CARDS - 2x2 grid */
+.hero-right{display:grid;grid-template-columns:1fr 1fr;gap:7px;align-content:center;width:100%}
+.float-card{background:rgba(255,255,255,.07);backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,.11);border-radius:14px;padding:10px 12px;transition:all .25s}
 .float-card:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.2)}
-.fc-label{font-size:8px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.28);margin-bottom:6px}
-.fc-val{font-size:17px;font-weight:600;color:white;line-height:1}
-.fc-sub{font-size:10px;color:rgba(255,255,255,.32);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.fc-row{display:flex;gap:10px}
+.float-card.full-width{grid-column:span 2}
+.fc-label{font-size:8px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.9px;color:rgba(255,255,255,.28);margin-bottom:5px}
+.fc-val{font-size:16px;font-weight:700;color:white;line-height:1}
+.fc-sub{font-size:9px;color:rgba(255,255,255,.32);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fc-row{display:flex;gap:8px}
 .fc-row .fc-item{flex:1;min-width:0}
-.fc-item .fc-val{font-size:15px}
+.fc-item .fc-val{font-size:14px}
 
 /* AQI ring inline */
-.aqi-inline{display:flex;align-items:center;gap:10px}
+.aqi-inline{display:flex;align-items:center;gap:8px}
 
 /* BOTTOM STRIP */
 #bottom-strip{padding:0 36px 20px}
@@ -618,35 +617,43 @@ function renderCards(){
 
   document.getElementById('hero-right').innerHTML=`
     <div class="float-card">
-      <div class="fc-row">
-        <div class="fc-item"><div class="fc-label">Wind</div><div class="fc-val">${kmh(c.wind_speed_10m)}<span style="font-size:12px;font-weight:400;opacity:.5"> km/h</span></div><div class="fc-sub">${wdir(c.wind_direction_10m)} · Gust ${kmh(c.wind_gusts_10m)}</div></div>
-        <div class="fc-item"><div class="fc-label">Humidity</div><div class="fc-val">${c.relative_humidity_2m}<span style="font-size:12px;font-weight:400;opacity:.5">%</span></div><div class="fc-sub">Dew ${T(c.dew_point_2m)}${TU()}</div></div>
-      </div>
+      <div class="fc-label">Wind</div>
+      <div class="fc-val">${kmh(c.wind_speed_10m)}<span style="font-size:10px;font-weight:400;opacity:.5"> km/h</span></div>
+      <div class="fc-sub">${wdir(c.wind_direction_10m)} · Gust ${kmh(c.wind_gusts_10m)}</div>
     </div>
     <div class="float-card">
-      <div class="fc-row">
-        <div class="fc-item"><div class="fc-label">UV Index</div><div class="fc-val" style="color:${uc}">${Math.round(c.uv_index)}</div><div class="fc-sub" style="color:${uc}88">${ul}</div></div>
-        <div class="fc-item"><div class="fc-label">Visibility</div><div class="fc-val">${(c.visibility/1000).toFixed(1)}<span style="font-size:12px;font-weight:400;opacity:.5">km</span></div><div class="fc-sub">Cloud ${c.cloud_cover}%</div></div>
-      </div>
+      <div class="fc-label">Humidity</div>
+      <div class="fc-val">${c.relative_humidity_2m}<span style="font-size:10px;font-weight:400;opacity:.5">%</span></div>
+      <div class="fc-sub">Dew ${T(c.dew_point_2m)}${TU()}</div>
     </div>
     <div class="float-card">
+      <div class="fc-label">UV Index</div>
+      <div class="fc-val" style="color:${uc}">${Math.round(c.uv_index)}</div>
+      <div class="fc-sub" style="color:${uc}99">${ul}</div>
+    </div>
+    <div class="float-card">
+      <div class="fc-label">Visibility</div>
+      <div class="fc-val">${(c.visibility/1000).toFixed(1)}<span style="font-size:10px;font-weight:400;opacity:.5">km</span></div>
+      <div class="fc-sub">Cloud ${c.cloud_cover}%</div>
+    </div>
+    <div class="float-card full-width">
       <div class="fc-label">Air Quality</div>
       <div class="aqi-inline">
-        <svg viewBox="0 0 40 40" style="width:40px;height:40px;flex-shrink:0" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="4"/>
-          <circle cx="20" cy="20" r="16" fill="none" stroke="${ac}" stroke-width="4" stroke-dasharray="100.5" stroke-dashoffset="${100.5-100.5*Math.min(aqv,300)/300}" transform="rotate(-90 20 20)" stroke-linecap="round"/>
-          <text x="20" y="25" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="${ac}">${aqv}</text>
+        <svg viewBox="0 0 36 36" style="width:36px;height:36px;flex-shrink:0" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="4"/>
+          <circle cx="18" cy="18" r="14" fill="none" stroke="${ac}" stroke-width="4" stroke-dasharray="88" stroke-dashoffset="${88-88*Math.min(aqv,300)/300}" transform="rotate(-90 18 18)" stroke-linecap="round"/>
+          <text x="18" y="22" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="${ac}">${aqv}</text>
         </svg>
-        <div><div style="font-size:13px;font-weight:600;color:${ac}">${al}</div><div style="font-size:10px;color:rgba(255,255,255,.3);margin-top:2px">European AQI</div></div>
+        <div><div style="font-size:13px;font-weight:600;color:${ac}">${al}</div><div style="font-size:9px;color:rgba(255,255,255,.3);margin-top:1px">European AQI</div></div>
       </div>
     </div>
-    <div class="float-card">
+    <div class="float-card full-width">
       <div class="fc-label">Sunrise · Sunset</div>
-      <svg viewBox="0 0 100 60" style="width:100%;height:50px;display:block" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 100 52" style="width:100%;height:42px;display:block" xmlns="http://www.w3.org/2000/svg">
         <defs><linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f97316"/><stop offset="50%" stop-color="#fde047"/><stop offset="100%" stop-color="#f97316"/></linearGradient></defs>
-        <path d="M 5 55 A 45 45 0 0 1 95 55" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1.5"/>
-        <path d="M 5 55 A 45 45 0 0 1 95 55" fill="none" stroke="url(#sg)" stroke-width="1.5" stroke-dasharray="141.4" stroke-dashoffset="${141.4-141.4*sunP}"/>
-        <circle cx="${ssx}" cy="${ssy}" r="5" fill="#fde047" filter="drop-shadow(0 0 4px #fde047)"/>
+        <path d="M 5 48 A 45 45 0 0 1 95 48" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1.5"/>
+        <path d="M 5 48 A 45 45 0 0 1 95 48" fill="none" stroke="url(#sg)" stroke-width="1.5" stroke-dasharray="141.4" stroke-dashoffset="${141.4-141.4*sunP}"/>
+        <circle cx="${ssx}" cy="${ssy}" r="4.5" fill="#fde047" filter="drop-shadow(0 0 3px #fde047)"/>
       </svg>
       <div style="display:flex;justify-content:space-between;margin-top:2px">
         <span style="font-size:11px;color:rgba(255,255,255,.45)">🌅 ${srS}</span>
