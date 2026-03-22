@@ -57,7 +57,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Inter',sans-serif}
 .chip-x:hover{opacity:1;color:#ff6b6b}
 
 /* CENTER HERO */
-#hero{display:flex;align-items:flex-start;justify-content:space-between;padding:0 40px;gap:24px}
+#hero{display:flex;align-items:flex-start;justify-content:space-between;padding:0 36px;gap:20px;overflow:hidden}
 
 .hero-left{flex:1;max-width:520px;padding-top:8px}
 .hero-date{font-size:12px;font-family:'JetBrains Mono',monospace;color:rgba(255,255,255,.35);letter-spacing:.5px;margin-bottom:18px;display:flex;align-items:center;gap:10px}
@@ -75,15 +75,15 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Inter',sans-serif}
 .hero-feels b{color:rgba(255,255,255,.6);font-weight:500}
 
 /* RIGHT FLOAT CARDS */
-.hero-right{flex:0 0 auto;display:flex;flex-direction:column;gap:10px;padding-top:8px;min-width:200px}
-.float-card{background:rgba(255,255,255,.07);backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,.11);border-radius:20px;padding:16px 18px;transition:all .25s}
+.hero-right{flex:0 0 220px;display:flex;flex-direction:column;gap:8px;padding-top:8px;width:220px;max-width:220px}
+.float-card{background:rgba(255,255,255,.07);backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,.11);border-radius:18px;padding:13px 15px;transition:all .25s}
 .float-card:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.2)}
-.fc-label{font-size:9px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.3);margin-bottom:8px}
-.fc-val{font-size:22px;font-weight:600;color:white;line-height:1}
-.fc-sub{font-size:11px;color:rgba(255,255,255,.35);margin-top:4px}
-.fc-row{display:flex;gap:16px}
-.fc-row .fc-item{flex:1}
-.fc-item .fc-val{font-size:17px}
+.fc-label{font-size:9px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.28);margin-bottom:7px}
+.fc-val{font-size:19px;font-weight:600;color:white;line-height:1}
+.fc-sub{font-size:10px;color:rgba(255,255,255,.32);margin-top:3px}
+.fc-row{display:flex;gap:12px}
+.fc-row .fc-item{flex:1;min-width:0}
+.fc-item .fc-val{font-size:16px}
 
 /* AQI ring inline */
 .aqi-inline{display:flex;align-items:center;gap:10px}
@@ -151,12 +151,12 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Inter',sans-serif}
 /* Life/Activity overlay */
 #overlay{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center}
 #overlay.show{display:flex}
-.overlay-box{background:rgba(12,16,28,.96);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:28px;max-width:680px;width:90%;max-height:80vh;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.2) transparent}
+.overlay-box{background:rgba(16,22,38,.97);border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:28px;max-width:680px;width:90%;max-height:82vh;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.2) transparent}
 .overlay-box::-webkit-scrollbar{width:3px}
 .overlay-box::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:2px}
 .overlay-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:white;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between}
-.overlay-close{background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:20px;transition:color .2s}
-.overlay-close:hover{color:white}
+.overlay-close{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:50%;width:30px;height:30px;color:rgba(255,255,255,.5);cursor:pointer;font-size:16px;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.overlay-close:hover{background:rgba(255,255,255,.14);color:white}
 .ov-tabs{display:flex;gap:4px;margin-bottom:18px;flex-wrap:wrap}
 .ovt{padding:6px 14px;font-size:11px;font-weight:600;cursor:pointer;border-radius:50px;border:none;background:rgba(255,255,255,.07);color:rgba(255,255,255,.45);transition:all .2s;font-family:'Inter',sans-serif}
 .ovt.on{background:rgba(255,255,255,.18);color:white}
@@ -165,55 +165,55 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Inter',sans-serif}
 
 /* Activity cards */
 .act-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.act-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:14px;display:flex;align-items:flex-start;gap:10px}
+.act-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px;display:flex;align-items:flex-start;gap:10px}
 .ac-icon{font-size:24px;flex-shrink:0}
 .ac-name{font-size:12px;font-weight:600;color:white;margin-bottom:3px}
 .ac-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px;display:inline-block}
-.ac-g{background:rgba(46,252,152,.12);color:#2efc98}
-.ac-o{background:rgba(255,183,64,.12);color:#ffb740}
-.ac-b{background:rgba(255,78,106,.12);color:#ff4e6a}
-.ac-reason{font-size:10px;color:rgba(255,255,255,.32);margin-top:3px}
+.ac-g{background:rgba(46,252,152,.15);color:#2efc98}
+.ac-o{background:rgba(255,183,64,.15);color:#ffb740}
+.ac-b{background:rgba(255,78,106,.15);color:#ff4e6a}
+.ac-reason{font-size:10px;color:rgba(255,255,255,.45);margin-top:3px}
 
 /* Outfit grid */
 .outfit-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.ow-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:12px 6px;text-align:center;font-size:22px}
-.ow-label{font-size:10px;color:rgba(255,255,255,.35);margin-top:5px}
+.ow-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:12px 6px;text-align:center;font-size:22px}
+.ow-label{font-size:10px;color:rgba(255,255,255,.45);margin-top:5px}
 
 /* Pollen */
-.pol-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.pol-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)}
 .pol-item:last-child{border:none}
-.pol-name{font-size:12px;color:rgba(255,255,255,.55);min-width:80px}
-.pol-bar{flex:1;height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.pol-name{font-size:12px;color:rgba(255,255,255,.65);min-width:80px}
+.pol-bar{flex:1;height:4px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
 .pol-fill{height:100%;border-radius:2px}
 .pol-lbl{font-size:10px;min-width:55px;text-align:right;font-family:'JetBrains Mono',monospace}
 
 /* Compare table */
 .cmp-table{width:100%;border-collapse:collapse}
-.cmp-table th{font-size:9px;text-transform:uppercase;letter-spacing:.7px;color:rgba(255,255,255,.28);font-family:'JetBrains Mono',monospace;padding:6px 8px;text-align:left;font-weight:500}
-.cmp-table td{padding:9px 8px;font-size:12px;border-top:1px solid rgba(255,255,255,.05);color:rgba(255,255,255,.7)}
-.cmp-table tr:hover td{background:rgba(255,255,255,.03)}
+.cmp-table th{font-size:9px;text-transform:uppercase;letter-spacing:.7px;color:rgba(255,255,255,.35);font-family:'JetBrains Mono',monospace;padding:6px 8px;text-align:left;font-weight:500}
+.cmp-table td{padding:9px 8px;font-size:12px;border-top:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.8)}
+.cmp-table tr:hover td{background:rgba(255,255,255,.05)}
 
 /* Insights */
 .score-wrap{display:flex;align-items:center;gap:18px;margin-bottom:16px}
-.ins-row{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;margin-bottom:6px}
+.ins-row{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;margin-bottom:6px}
 .ins-icon{font-size:16px;flex-shrink:0;margin-top:1px}
-.ins-text{font-size:12px;color:rgba(255,255,255,.5)}
-.ins-text b{color:rgba(255,255,255,.85)}
+.ins-text{font-size:12px;color:rgba(255,255,255,.62)}
+.ins-text b{color:white}
 
 /* Heatmap */
 .hm-g{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:6px 0}
-.hm-c{aspect-ratio:1;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-family:'JetBrains Mono',monospace;cursor:default;position:relative}
+.hm-c{height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:600;cursor:default;position:relative}
 .hm-c:hover::after{content:attr(data-t);position:absolute;bottom:calc(100% + 4px);left:50%;transform:translateX(-50%);background:rgba(10,14,28,.95);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:3px 8px;font-size:10px;white-space:nowrap;z-index:50;pointer-events:none}
 .hm-l{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
-.hm-ll{font-size:8px;text-align:center;color:rgba(255,255,255,.25);font-family:'JetBrains Mono',monospace}
+.hm-ll{font-size:9px;text-align:center;color:rgba(255,255,255,.3);font-family:'JetBrains Mono',monospace;padding:2px 0}
 
 /* Radar */
 .radar-wrap{border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
 
 /* Sci panel */
-.sci-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.sci-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.07)}
 .sci-row:last-child{border:none}
-.sci-k{font-size:12px;color:rgba(255,255,255,.4)}
+.sci-k{font-size:12px;color:rgba(255,255,255,.5)}
 .sci-v{font-size:13px;font-weight:600;color:white;font-family:'JetBrains Mono',monospace}
 .trend-chip{font-size:10px;padding:2px 7px;border-radius:20px}
 .up{background:rgba(46,252,152,.1);color:#2efc98}
@@ -628,7 +628,7 @@ function renderCards(){
     </div>
     <div class="float-card">
       <div class="fc-row">
-        <div class="fc-item"><div class="fc-label">UV Index</div><div class="fc-val" style="color:${uc}">${c.uv_index}</div><div class="fc-sub" style="color:${uc}88">${ul}</div></div>
+        <div class="fc-item"><div class="fc-label">UV Index</div><div class="fc-val" style="color:${uc}">${Math.round(c.uv_index)}</div><div class="fc-sub" style="color:${uc}88">${ul}</div></div>
         <div class="fc-item"><div class="fc-label">Visibility</div><div class="fc-val">${(c.visibility/1000).toFixed(1)}<span style="font-size:12px;font-weight:400;opacity:.5">km</span></div><div class="fc-sub">Cloud ${c.cloud_cover}%</div></div>
       </div>
     </div>
@@ -719,7 +719,10 @@ function renderAlerts(){
 
 // ── CHIPS ──
 function addChip(name,lat,lon){
-  const row=document.getElementById('chips-row');if(row.querySelector(`[data-n="${name}"]`))return;
+  const row=document.getElementById('chips-row');
+  // Remove any chip with same lat/lon (avoid Bhimtal + Bhimtal,India duplicates)
+  const existing=[...row.querySelectorAll('.chip')];
+  for(const ch of existing){if(Math.abs(+ch.dataset.lat-lat)<0.05&&Math.abs(+ch.dataset.lon-lon)<0.05)ch.remove();}
   const ch=document.createElement('div');ch.className='chip';ch.dataset.n=name;ch.dataset.lat=lat;ch.dataset.lon=lon;
   ch.innerHTML=`${name}<span class="chip-x" onclick="event.stopPropagation();this.parentElement.remove()">✕</span>`;
   ch.onclick=()=>loadWeather(+ch.dataset.lat,+ch.dataset.lon,name);row.appendChild(ch);
@@ -760,9 +763,12 @@ function buildOverlay(type){
         <button class="ovt" onclick="ovTab('activity')">Activities</button>
       </div>
       <div id="ov-outfit" class="ov-panel show">
-        <div style="display:flex;align-items:center;gap:14px;padding:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;margin-bottom:12px">
+        <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;margin-bottom:12px">
           <span style="font-size:40px">${c.temperature_2m>30?'👕':c.temperature_2m>22?'👔':c.temperature_2m>15?'🧥':c.temperature_2m>8?'🧣':'🧤'}</span>
-          <div><div style="font-size:14px;font-weight:600;color:white;margin-bottom:3px">${c.temperature_2m>30?'Light & breathable':c.temperature_2m>22?'Smart casual':c.temperature_2m>15?'Light layers':c.temperature_2m>8?'Warm layers':'Full winter gear'}</div><div style="font-size:12px;color:rgba(255,255,255,.4)">${T(c.temperature_2m)}${TU()} · ${hum}% humidity</div></div>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:white;margin-bottom:4px">${c.temperature_2m>30?'Stay cool & light':c.temperature_2m>22?'Smart casual, comfortable':c.temperature_2m>15?'Light jacket recommended':c.temperature_2m>8?'Warm layers essential':'Full winter gear needed'}</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.45)">${T(c.temperature_2m)}${TU()} outside · ${hum}% humidity · ${WMO[wmo]?.[1]||'--'}</div>
+          </div>
         </div>
         <div class="outfit-wrap">${outfitItems.map(([e,l])=>`<div class="ow-item">${e}<div class="ow-label">${l}</div></div>`).join('')}</div>
       </div>
@@ -782,7 +788,7 @@ function buildOverlay(type){
     const hi2=c.temperature_2m>27?Math.round(-8.78+1.61*c.temperature_2m+2.34*hum-0.146*c.temperature_2m*hum-0.0123*c.temperature_2m*c.temperature_2m-0.0164*hum*hum):null;
     const wc2=c.temperature_2m<10?Math.round(13.12+0.6215*c.temperature_2m-11.37*Math.pow(kmh(c.wind_speed_10m),0.16)+0.3965*c.temperature_2m*Math.pow(kmh(c.wind_speed_10m),0.16)):null;
     const moon=moonP();
-    const tips=[c.temperature_2m>35?['🥵','Heat Advisory','Avoid midday sun. Drink 3L+ water.']:null,c.temperature_2m<5?['🥶','Cold Advisory','Layer up. Frostbite risk if exposed >30 min.']:null,c.uv_index>=6?['☀️','Sun Protection',`UV ${c.uv_index} — SPF ${c.uv_index>=8?50:30}+ required.`]:null,aqv>100?['😷','Poor Air Quality','Consider N95 mask outdoors.']:null,psl.slice(0,3).some(p=>p>70)?['🌧️','Rain Coming',`${Math.max(...psl.slice(0,3))}% chance in 3h. Carry umbrella.`]:null,kmh(c.wind_gusts_10m)>55?['💨','Wind Warning',`Gusts to ${kmh(c.wind_gusts_10m)} km/h.`]:null,hum>80?['💧','High Humidity',`${hum}% — feels muggy.`]:null,['💡','Best Window',ws>=70?'Great outdoor conditions all day.':'Limited outdoor windows today.']].filter(Boolean);
+    const tips=[c.temperature_2m>35?['🥵','Heat Advisory','Avoid midday sun. Drink 3L+ water.']:null,c.temperature_2m<5?['🥶','Cold Advisory','Layer up. Frostbite risk if exposed >30 min.']:null,c.uv_index>=6?['☀️','Sun Protection',`UV ${Math.round(c.uv_index)} — SPF ${c.uv_index>=8?50:30}+ required.`]:null,aqv>100?['😷','Poor Air Quality','Consider N95 mask outdoors.']:null,psl.slice(0,3).some(p=>p>70)?['🌧️','Rain Coming',`${Math.max(...psl.slice(0,3))}% chance in 3h. Carry umbrella.`]:null,kmh(c.wind_gusts_10m)>55?['💨','Wind Warning',`Gusts up to ${kmh(c.wind_gusts_10m)} km/h expected.`]:null,hum>80?['💧','High Humidity',`${hum}% — feels muggy.`]:null,['💡','Best Window',ws>=70?'Great outdoor conditions all day.':'Limited outdoor windows today.']].filter(Boolean);
     return`
       <div class="overlay-title">Insights <button class="overlay-close" onclick="closeOverlay()">×</button></div>
       <div class="score-wrap">
@@ -794,7 +800,7 @@ function buildOverlay(type){
         <div><div style="font-size:18px;font-weight:700;color:white;margin-bottom:4px">${ws>=80?'Excellent day!':ws>=55?'Decent conditions':'Challenging weather'}</div><div style="font-size:12px;color:rgba(255,255,255,.4)">Weather quality out of 100</div></div>
       </div>
       <div style="margin-bottom:14px">${tips.map(([ic,ti,te])=>`<div class="ins-row"><div class="ins-icon">${ic}</div><div class="ins-text"><b>${ti}</b> — ${te}</div></div>`).join('')}</div>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:14px">
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:14px;margin-bottom:12px">
         <div class="sci-row"><div class="sci-k">Daily Range</div><div class="sci-v">${T(mnT)}° – ${T(mxT)}°</div></div>
         ${hi2?`<div class="sci-row"><div class="sci-k">Heat Index</div><div class="sci-v" style="color:#fb923c">${T(hi2)}${TU()}</div></div>`:''}
         ${wc2?`<div class="sci-row"><div class="sci-k">Wind Chill</div><div class="sci-v" style="color:#7dd3fc">${T(wc2)}${TU()}</div></div>`:''}
